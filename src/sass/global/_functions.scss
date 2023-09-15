@@ -1,0 +1,9 @@
+// 要素単位指定
+
+@function rem($num) {
+  @return calc($num / 16 * 1rem);
+}
+
+@function px($num) {
+  @return calc($num * 1px);
+}

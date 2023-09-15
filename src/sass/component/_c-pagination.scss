@@ -1,0 +1,85 @@
+@use "../global" as g;
+
+// ページネーション
+.c-pagination {
+  display: flex;
+  gap: g.rem(8);
+  justify-content: center;
+}
+
+.page-numbers,
+.post-page-numbers {
+  display: inline-block;
+  width: g.rem(50);
+  aspect-ratio: 1 / 1;
+  color: #888888;
+  background-color: #f8f8f8;
+  font-size: max(g.rem(16), 14px);
+  text-align: center;
+  line-height: g.rem(50);
+  position: relative;
+
+  @include g.mq("sp") {
+    width: g.rem(40);
+    line-height: g.rem(40);
+  }
+
+  &.current {
+    color: g.$white;
+    background-color: g.$main-color;
+  }
+}
+
+.page-numbers {
+  &.prev {
+    margin-right: g.rem(12);
+
+    @include g.mq("sp") {
+      margin-right: 0;
+    }
+  }
+
+  &.next {
+    margin-left: g.rem(12);
+
+    @include g.mq("sp") {
+      margin-left: 0;
+    }
+  }
+
+  &.dots {
+    background: transparent;
+  }
+
+  .prev-img,
+  .next-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    @include g.mq("sp") {
+      width: 7.48px;
+      height: 12.72px;
+    }
+  }
+}
+
+a.page-numbers,
+a.post-page-numbers {
+  transition: all 0.4s;
+
+  @include g.mq("tab-up") {
+    &:hover {
+      color: g.$white;
+      background-color: g.$main-color;
+    }
+  }
+}
+
+a.page-numbers {
+  &.prev path,
+  &.next path {
+    fill: currentColor;
+  }
+}

@@ -1,0 +1,48 @@
+@use "../global" as g;
+
+.p-footer {
+  background-color: g.$black;
+  color: g.$white;
+  text-align: center;
+  position: relative;
+}
+
+.p-footer__inner {
+  padding-top: g.rem(125);
+  padding-bottom: g.rem(18);
+
+  @include g.mq("sp") {
+    padding-top: g.rem(75);
+    padding-bottom: g.rem(12);
+  }
+}
+
+.p-footer__logo {
+  width: g.rem(368);
+  height: auto;
+  margin: 0 auto;
+
+  @include g.mq("sp") {
+    width: g.rem(282);
+  }
+}
+
+.p-footer__info {
+  display: inline-block;
+  text-align: left;
+  margin-top: g.rem(4);
+
+  @include g.mq("sp") {
+    margin-top: g.rem(6);
+  }
+}
+
+.p-footer__copyright {
+  margin-top: g.rem(76);
+  font-size: max(g.rem(14), 12px);
+
+  @include g.mq("sp") {
+    margin-top: g.rem(38);
+    font-size: g.rem(12);
+  }
+}

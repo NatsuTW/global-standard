@@ -1,0 +1,42 @@
+@use "../global" as g;
+
+// サイトバーのカテゴリセッション
+.p-sidebar-cat__items {
+  display: flex;
+  flex-direction: column;
+  margin-top: g.rem(12);
+}
+
+.p-sidebar-cat__item {
+  border-top: 1px solid #dddddd;
+
+  &:last-child {
+    border-bottom: 1px solid #dddddd;
+  }
+}
+
+.p-sidebar-cat__link {
+  display: block;
+  font-size: max(g.rem(16), 14px);
+  font-weight: 700;
+  padding: g.rem(14) 0 g.rem(14) g.rem(40);
+  position: relative;
+  transition: all 0.3s;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: g.rem(9.42);
+    height: g.rem(16.05);
+    background: url(../img/icon-chevron-right02.svg) no-repeat center center /
+      cover;
+    position: absolute;
+    left: g.rem(20);
+    top: 50%;
+    translate: 0 -50%;
+  }
+
+  @include g.hover {
+    opacity: 0.7;
+  }
+}

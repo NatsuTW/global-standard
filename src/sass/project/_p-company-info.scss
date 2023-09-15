@@ -1,0 +1,87 @@
+@use "../global" as g;
+
+// 下層ページAboutの会社概要セッション
+.p-company-info {
+  background: url(../img/bg-company-info.png) no-repeat center center / cover;
+  padding-top: g.rem(80);
+  padding-bottom: g.rem(80);
+
+  @include g.mq("sp") {
+    padding-top: g.rem(60);
+    padding-bottom: g.rem(60);
+  }
+}
+
+.p-company-info__wrapper {
+  max-width: g.rem(768);
+  background-color: g.$white;
+  margin: 0 auto;
+  padding: g.rem(60) g.rem(40) g.rem(80);
+
+  @include g.mq("sp") {
+    width: 100%;
+    max-width: 100%;
+    padding: g.rem(40) g.rem(20);
+  }
+}
+
+.p-company-info__title {
+  font-size: max(g.rem(24), 20px);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.p-company-info__table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: max(g.rem(16), 14px);
+  line-height: 1.5;
+  margin-top: g.rem(60);
+
+  @include g.mq("sp") {
+    font-size: g.rem(14);
+    line-height: 1.428;
+    margin-top: g.rem(40);
+  }
+}
+
+.p-company-info__table-head {
+  width: g.rem(200);
+  padding-left: g.rem(30);
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: g.$main-color;
+  vertical-align: middle;
+
+  @include g.mq("sp") {
+    width: g.rem(100);
+    padding-left: 0;
+  }
+}
+
+.p-company-info__table-text {
+  padding: g.rem(24) g.rem(24) g.rem(24) g.rem(34);
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: #e8eaec;
+  vertical-align: middle;
+  word-break: break-word;
+  transition: opacity 0.3s;
+
+  a[href^="mailto:"] {
+    @include g.hover {
+      opacity: 0.7;
+    }
+  }
+
+  @include g.mq("tab-up") {
+    a[href^="tel:"] {
+      pointer-events: none;
+    }
+  }
+
+  @include g.mq("sp") {
+    padding: g.rem(16) 0 g.rem(16) g.rem(24);
+  }
+}

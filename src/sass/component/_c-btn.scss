@@ -1,0 +1,78 @@
+@use "../global" as g;
+
+// ボタン
+.c-btn {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.c-btn__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+}
+
+.c-btn__arrow--main {
+  right: g.rem(20);
+
+  @include g.mq("sp") {
+    right: g.rem(12);
+  }
+}
+
+.c-btn__arrow--accent {
+  right: 31px;
+
+  @include g.mq("sp") {
+    right: 18px;
+  }
+}
+
+.c-btn__arrow path {
+  fill: currentColor;
+}
+
+.c-btn--main {
+  color: g.$main-color;
+  background: g.$white;
+  border: 1px solid g.$main-color;
+  transition: all 0.4s;
+
+  @include g.hover {
+    color: g.$white;
+    background: g.$main-color;
+
+    .c-btn__arrow {
+      transform: translate(10px, -50%);
+    }
+  }
+}
+
+.c-btn--secondary {
+  color: g.$white;
+  background: g.$main-color;
+  border: 1px solid g.$main-color;
+
+  @include g.hover {
+    background: g.$main-color-dark;
+  }
+}
+
+.c-btn--accent {
+  color: g.$accent-color;
+  background: transparent;
+  border: 3px solid g.$accent-color;
+  transition: all 0.4s;
+
+  @include g.hover {
+    color: g.$black;
+    background: g.$accent-color;
+
+    .c-btn__arrow {
+      transform: translate(6px, -50%);
+    }
+  }
+}

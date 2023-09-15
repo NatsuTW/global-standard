@@ -1,0 +1,64 @@
+@use "../global" as g;
+
+// トップページのトップビュー
+.p-top-mv {
+  width: 100%;
+  position: relative;
+}
+
+.p-top-mv__swiper {
+  width: 92.89%;
+  margin-right: 0;
+
+  @include g.mq('sp'){
+    width: 89.33%;
+  }
+}
+
+.p-top-mv__text {
+  position: absolute;
+  left: 3.9%;
+  bottom: 8.5%;
+  z-index: 5;
+
+  @include g.mq('sp'){
+    left: 5.33%;
+    bottom: 3%;
+  }
+}
+
+.p-top-mv__text-en-group {
+  display: flex;
+  flex-direction: column;
+  gap: g.rem(16);
+
+  @include g.mq('sp'){
+    gap: g.rem(8);
+  }
+}
+
+.p-top-mv__text-en {
+  display: inline-block;
+  color: g.$main-color;
+  background-color: g.$white;
+  font-size: g.rem(60);
+  line-height: 1.2;
+
+  @include g.mq('sp'){
+    font-size: g.rem(40);
+  }
+}
+
+.p-top-mv__text-jp {
+  display: inline-block;
+  color: g.$white;
+  background-color: g.$main-color;
+  font-size: g.rem(20);
+  margin-top: g.rem(16);
+  line-height: 1.45;
+
+  @include g.mq('sp'){
+    font-size: g.rem(16);
+    line-height: 1.5;
+  }
+}

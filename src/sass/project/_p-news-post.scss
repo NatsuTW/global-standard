@@ -1,0 +1,153 @@
+@use "../global" as g;
+
+// 下層ページnewsの投稿ページ
+.p-news-post__meta {
+  padding-right: g.rem(10);
+}
+
+.p-news-post__cat {
+  padding: g.rem(5) g.rem(23);
+  transition: all 0.3s;
+
+  @include g.hover {
+    opacity: 0.7;
+  }
+}
+
+.p-news-post__title {
+  font-size: max(g.rem(24), 22px);
+  font-weight: 700;
+  line-height: 1.333;
+  margin-top: g.rem(22);
+
+  @include g.mq("sp") {
+    font-size: max(g.rem(20), 20px);
+    margin-top: g.rem(8);
+  }
+}
+
+.p-news-post__thumbnail {
+  margin-top: g.rem(42);
+  text-align: center;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.p-news-post__body {
+  padding-bottom: g.rem(40);
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+
+    + p,
+    ul,
+    blockquote {
+      margin-top: 0;
+    }
+  }
+
+  h2 {
+    color: g.$main-color;
+    background-color: #f8f8f8;
+    font-size: max(g.rem(20), 20px);
+    line-height: 1.5;
+    margin-top: g.rem(40);
+    margin-bottom: g.rem(20);
+    padding: g.rem(8) g.rem(20) g.rem(8);
+    border-left: 6px solid g.$main-color;
+  }
+
+  h3 {
+    color: g.$main-color;
+    font-size: max(g.rem(18), 18px);
+    line-height: 1.5;
+    margin-top: g.rem(40);
+    margin-bottom: g.rem(18);
+    padding-bottom: g.rem(6);
+    border-bottom: 1px solid g.$main-color;
+  }
+
+  h4 {
+    color: g.$main-color;
+    font-size: max(g.rem(16), 16px);
+    line-height: 1.5;
+    margin-top: g.rem(40);
+    margin-bottom: g.rem(14);
+  }
+
+  p,
+  ul,
+  blockquote {
+    margin-top: g.rem(37);
+  }
+
+  ul,
+  blockquote {
+    margin-left: g.rem(40);
+
+    @include g.mq("sp") {
+      margin-left: 0;
+    }
+  }
+
+  ul > li {
+    &::before {
+      content: "・";
+    }
+  }
+
+  li:not(:last-child) {
+    margin-bottom: g.rem(12);
+  }
+
+  blockquote {
+    background: #f8f8f8 url(../img/quote.svg) no-repeat top g.rem(17) left
+      g.rem(14);
+    margin-right: g.rem(74);
+    border-left: 4px solid g.$main-color;
+    padding: g.rem(34) g.rem(35) g.rem(34) g.rem(30);
+
+    @include g.mq("sp") {
+      margin-right: 0;
+    }
+
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.p-news-post__pagination {
+  margin-top: g.rem(60);
+}
+
+.p-news-post__nav-links {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: g.rem(15);
+
+  @include g.mq("sp") {
+    margin-bottom: 0;
+  }
+
+  a {
+    display: inline-block;
+    color: g.$main-color;
+    padding: g.rem(5) g.rem(16);
+    border: 1px solid g.$main-color;
+    border-radius: 4px;
+    transition: all 0.3s;
+
+    @include g.hover {
+      color: g.$white;
+      background-color: g.$main-color;
+    }
+  }
+}

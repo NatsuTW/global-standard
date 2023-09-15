@@ -1,0 +1,77 @@
+@use "../global" as g;
+
+// サイトバーの新着記事
+.p-sidebar-new {
+  width: 100%;
+}
+
+.p-sidebar-new__cards {
+  margin-top: g.rem(12);
+  display: flex;
+  flex-direction: column;
+  gap: g.rem(16);
+
+  @include g.mq("sp") {
+    margin-top: g.rem(16);
+    gap: g.rem(20);
+  }
+}
+
+.p-sidebar-new__card {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 3.334%;
+  transition: all 0.3s;
+
+  @include g.mq("tab-up") {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  @include g.mq("sp") {
+    gap: 3.582%;
+  }
+}
+
+.p-sidebar-new__card-thumbnail {
+  width: 33.334%;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+
+  @include g.mq("sp") {
+    width: 35.821%;
+    aspect-ratio: 4 / 3;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.p-sidebar-new__card-body {
+  padding: g.rem(2) 0;
+  flex-grow: 1;
+}
+
+.p-sidebar-new__card-title {
+  font-size: max(g.rem(14), 13px);
+  font-weight: 700;
+  line-height: 1.428;
+  margin-top: g.rem(8);
+
+  @include g.mq("sp") {
+    margin-top: g.rem(6);
+  }
+}
+
+.p-sidebar-new__card-meta {
+  padding-right: g.rem(3);
+}
+
+.p-sidebar-new__card-cat {
+  font-size: max(g.rem(12), 10px);
+  padding: g.rem(1) g.rem(11);
+}

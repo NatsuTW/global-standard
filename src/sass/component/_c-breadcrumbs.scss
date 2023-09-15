@@ -1,0 +1,31 @@
+@use "../global" as g;
+
+// パンくずリスト
+.c-breadcrumbs {
+  margin-top: g.rem(12);
+  font-size: max(g.rem(12), 12px);
+  line-height: 1.5;
+}
+
+.c-breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: max(g.rem(8), 8px);
+
+  a {
+    color: #888888;
+  }
+}
+
+.c-breadcrumbs__list > span {
+  &:not(:first-child) {
+    &::before {
+      content: "＞";
+      margin-right: max(g.rem(8), 8px);
+    }
+  }
+
+  &:not(:last-child) {
+    color: #888888;
+  }
+}

@@ -1,0 +1,110 @@
+@use "../global" as g;
+
+// 下層ページAboutのメッセージセッション
+.p-company-msg {
+  width: 100%;
+  padding-top: g.rem(80);
+  padding-bottom: g.rem(120);
+
+  @include g.mq("sp") {
+    padding-top: g.rem(60);
+    padding-bottom: g.rem(60);
+  }
+}
+
+.p-company-msg__content {
+  display: flex;
+  flex-direction: column;
+  gap: g.rem(120);
+
+  @include g.mq("sp") {
+    gap: g.rem(60);
+  }
+}
+
+.p-company-msg__heading {
+  width: 100%;
+  padding: g.rem(20) g.rem(20) g.rem(178) g.rem(20);
+
+  @include g.mq("sp") {
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+    padding-bottom: g.rem(174);
+  }
+}
+
+.p-company-msg__heading--mission {
+  background: url(../img/img-company01_pc.png) no-repeat center center / cover;
+
+  @include g.mq("sp") {
+    background-image: url(../img/sp/img-company01_sp.png);
+  }
+}
+
+.p-company-msg__heading--vision {
+  background: url(../img/img-company02_pc.png) no-repeat center center / cover;
+
+  @include g.mq("sp") {
+    background-image: url(../img/sp/img-company02_sp.png);
+  }
+}
+
+.p-company-msg__title {
+  color: g.$white;
+}
+
+.p-company-msg__title-en {
+  display: block;
+  font-size: g.rem(100);
+  line-height: 1.21;
+
+  @include g.mq("sp") {
+    font-size: g.rem(52);
+  }
+}
+
+.p-company-msg__title-jp {
+  display: block;
+  font-size: g.rem(24);
+  line-height: 1.5;
+
+  @include g.mq("sp") {
+    font-size: g.rem(16);
+  }
+}
+
+.p-company-msg__body {
+  max-width: 688px;
+  background-color: g.$white;
+  margin: g.rem(-60) auto 0;
+  padding: g.rem(30) g.rem(40);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
+
+  @include g.mq("sp") {
+    width: 100%;
+    margin-top: g.rem(-40);
+    padding: g.rem(18) g.rem(20);
+  }
+}
+
+.p-company-msg__body-title {
+  color: g.$main-color;
+  font-size: max(g.rem(24), 20px);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+
+  @include g.mq("sp") {
+    font-size: g.rem(20);
+    line-height: 1.45;
+  }
+}
+
+.p-company-msg__body-text {
+  font-size: max(g.rem(14), 14px);
+  margin-top: g.rem(31);
+
+  @include g.mq("sp") {
+    margin-top: g.rem(20);
+  }
+}

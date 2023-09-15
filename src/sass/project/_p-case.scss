@@ -1,0 +1,42 @@
+@use "../global" as g;
+
+// 下層ページcase study
+.p-case {
+  padding-top: g.rem(80);
+  padding-bottom: g.rem(160);
+
+  @include g.mq("sp") {
+    padding-top: g.rem(60);
+    padding-bottom: g.rem(100);
+  }
+}
+
+.p-case__genre-links {
+  display: flex;
+  gap: g.rem(16);
+
+  @include g.mq("sp") {
+    flex-direction: column;
+    gap: g.rem(20);
+    padding: 0 g.rem(20);
+  }
+}
+
+.p-case__genre-link {
+  width: 208px;
+  display: inline-block;
+  background-color: #eeeeee;
+  font-weight: 700;
+  text-align: center;
+  padding: g.rem(10) g.rem(12);
+  transition: all 0.3s;
+
+  @include g.hover {
+    background-color: #dddddd;
+  }
+
+  @include g.mq("sp") {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,140 @@
+@use "../global" as g;
+
+// 下層ページServiceのfaqセッション
+.p-service-faq {
+  padding-top: g.rem(160);
+  padding-bottom: g.rem(160);
+
+  @include g.mq('sp'){
+    padding-top: g.rem(60);
+    padding-bottom: g.rem(100);
+  }
+}
+
+.p-service-faq__title {
+  font-size: max(g.rem(24), 20px);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.p-service-faq__items {
+  width: 100%;
+  max-width: g.rem(688);
+  display: flex;
+  flex-direction: column;
+  gap: g.rem(32);
+  margin: g.rem(90) auto 0;
+
+  @include g.mq('sp'){
+    max-width: 100%;
+    gap: g.rem(16);
+    margin-top: g.rem(56);
+  }
+}
+
+.p-service-faq__item {
+  padding-bottom: g.rem(32);
+  border-bottom: 1px solid #dddddd;
+  cursor: pointer;
+
+  @include g.mq('sp'){
+    padding-bottom: g.rem(16);
+  }
+}
+
+.p-service-faq__q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1.745%;
+
+  @include g.mq('sp'){
+    padding-right: 2.388%;
+    align-items: flex-start;
+  }
+}
+
+.p-service-faq__q-text {
+  font-size: max(g.rem(20), 14px);
+  font-weight: 700;
+  line-height: 1.45;
+  transition: color 0.4s;
+
+  @include g.mq('sp'){
+    width: 80.123%;
+    font-size: g.rem(16);
+    line-height: 1.5;
+  }
+
+  &.is-open {
+    color: g.$accent-color-second;
+  }
+}
+
+.p-service-faq__icon {
+  width: 21px;
+  height: 21px;
+  position: relative;
+  line-height: 1.45;
+
+  @include g.mq('sp'){
+    line-height: 1.5;
+    margin-top: g.rem(1.5);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: g.$black;
+    transition: all 0.3s ease-out;
+    position: absolute;
+  }
+
+  // vertical line
+  &::before {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    translate: -50%;
+  }
+
+  // horizontal line
+  &::after {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    translate: 0 -50%;
+  }
+
+  &.is-open {
+    &::before,
+    &::after {
+      background-color: g.$accent-color-second;
+    }
+
+    &:before {
+      rotate: 45deg;
+    }
+
+    &::after {
+      rotate: 45deg;
+    }
+  }
+}
+
+.p-service-faq__a {
+  display: none;
+  margin-top: g.rem(31);
+  margin-bottom: g.rem(-5);
+  padding-left: g.rem(40);
+  padding-right: g.rem(60);
+
+  @include g.mq('sp'){
+    margin-top: g.rem(20);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

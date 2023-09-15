@@ -1,0 +1,22 @@
+@use "../global" as g;
+
+.l-inner {
+  max-width: g.px(g.$inner-width);
+  height: auto;
+  padding-right: g.rem(40);
+  padding-left: g.rem(40);
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: content-box;
+
+  @include g.mq('sp'){
+    max-width: 520px;
+    padding-right: g.rem(20);
+    padding-left: g.rem(20);
+  }
+}
+
+.l-inner--narrow {
+  @extend .l-inner;
+  max-width: 688px;
+}

@@ -1,0 +1,32 @@
+@use "../global" as g;
+
+html {
+  @media screen and (max-width: #{g.px(g.$inner-width - 1)}) and (min-width: #{g.px(g.$sp-width)}) {
+    font-size: calc(1600 / #{g.$inner-width} * 1vw)
+  }
+
+  @include g.mq('xs'){
+    font-size: calc(1600 / #{g.$xs-width} * 1vw)
+  }
+}
+
+body {
+  color: g.$text-color;
+  font-family: g.$font-base;
+  font-size: max(g.rem(g.$fs-base), 14px);
+  font-weight: g.$fw-base;
+  line-height: g.$lh-base;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  line-height: 0;
+}
+
+a {
+  color: g.$black;
+  text-decoration: none;
+}
+

@@ -1,0 +1,39 @@
+@use "../global" as g;
+
+// トップページのセッションヘッディング
+.c-top-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: g.$main-color;
+
+  @include g.mq('sp'){
+    display: block;
+  }
+}
+
+.c-top-heading--white {
+  @extend .c-top-heading;
+  color: g.$white;
+}
+
+.c-top-heading__title-en {
+  display: block;
+  font-size: g.rem(100);
+  line-height: 1.21;
+
+  @include g.mq('sp'){
+    font-size: g.rem(52);
+  }
+}
+
+.c-top-heading__title-jp {
+  display: block;
+  font-size: g.rem(24);
+  font-weight: 700;
+  line-height: 1.5;
+
+  @include g.mq('sp'){
+    font-size: g.rem(16);
+  }
+}

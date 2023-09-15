@@ -1,0 +1,71 @@
+@use "../global" as g;
+
+// グローバルメニュ
+.p-gnav {
+  display: flex;
+  gap: g.em(32);
+  align-items: center;
+
+  @include g.mq("tab-down") {
+    display: none;
+  }
+}
+
+.p-gnav__list {
+  display: flex;
+  gap: g.em(46);
+}
+
+.p-gnav__item {
+  &:not(:first-child) {
+    position: relative;
+    &::before {
+      content: "／";
+      position: absolute;
+      top: 50%;
+      left: g.em(-30);
+      translate: 0 -50%;
+    }
+  }
+
+  a {
+    padding-bottom: g.rem(7);
+    position: relative;
+    transition: all 0.3s;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: g.$main-color;
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transition: all 0.4s;
+      transform: scale(0, 1);
+      transform-origin: center top;
+    }
+
+    @include g.hover {
+      color: g.$main-color;
+
+      &::after {
+        transform: scale(1, 1);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.p-gnav__btns {
+  display: flex;
+  gap: g.em(10);
+}
+
+.p-gnav__btn {
+  width: g.em(176);
+  padding: g.em(22) g.em(14);
+  font-size: g.em(14);
+}

@@ -1,0 +1,31 @@
+@use "../global" as g;
+
+.p-not-found {
+  padding-top: g.rem(100);
+  padding-bottom: g.rem(100);
+}
+
+.p-not-found__title {
+  font-size: max(g.rem(32), 28px);
+  font-weight: 700;
+}
+
+.p-not-found__text {
+  font-size: max(g.rem(16), 14px);
+  margin-top: g.rem(16);
+}
+
+.p-not-found__link {
+  font-size: max(g.rem(16), 14px);
+  margin-top: g.rem(20);
+
+  a {
+    color: g.$main-color;
+    text-decoration: underline;
+    margin-left: g.rem(5);
+
+    @include g.hover {
+      opacity: 0.7;
+    }
+  }
+}

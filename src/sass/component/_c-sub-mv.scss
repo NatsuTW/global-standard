@@ -1,0 +1,129 @@
+@use "../global" as g;
+
+// 下層ページのトップビュー
+.c-sub-mv {
+  width: 100%;
+  height: g.rem(250);
+  position: relative;
+}
+
+.c-sub-mv__bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &:after {
+    // transparent graphic decoration
+    content: "";
+    width: g.rem(365.65);
+    height: 100%;
+    background: rgba(2, 62, 120, 0.8);
+    clip-path: polygon(0 0, 100% 0, 60.16% 100%, 0 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include g.mq('sp'){
+      width: g.rem(165.65);
+      clip-path: polygon(0 0, 100% 0, 14.49% 100%, 0 100%);
+    }
+  }
+}
+
+.c-sub-mv__bg--about {
+  background: url(../img/mv-company_pc.png) no-repeat center / cover;
+
+  @include g.mq('sp'){
+    background-image: url(../img/sp/mv-company_sp.png)
+  }
+}
+
+.c-sub-mv__bg--service {
+  background: url(../img/mv-service_pc.png) no-repeat center / cover;
+
+  @include g.mq('sp'){
+    background-image: url(../img/sp/mv-service_sp.png)
+  }
+}
+
+.c-sub-mv__bg--case {
+  background: url(../img/mv-company_pc.png) no-repeat center / cover;
+
+  @include g.mq('sp'){
+    background-image: url(../img/sp/mv-company_sp.png)
+  }
+}
+
+.c-sub-mv__bg--news {
+  background: url(../img/mv-news_pc.png) no-repeat center / cover;
+
+  @include g.mq('sp'){
+    background-image: url(../img/sp/mv-news_sp.png)
+  }
+}
+
+.c-sub-mv__bg--download {
+  background: url(../img/mv-download_pc.png) no-repeat center / cover;
+
+  @include g.mq('sp'){
+    background-image: url(../img/sp/mv-download_sp.png)
+  }
+}
+
+.c-sub-mv__bg--contact {
+  background: url(../img/mv-contact_pc.png) no-repeat center / cover;
+
+  @include g.mq('sp'){
+    background-image: url(../img/sp/mv-contact_sp.png)
+  }
+}
+
+.c-sub-mv__heading {
+  position: absolute;
+  top: 50%;
+  left: g.rem(220);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: g.rem(8);
+
+  @include g.mq('sp'){
+    left: g.rem(21);
+  }
+}
+
+.c-sub-mv__title-en {
+  font-size: g.rem(60);
+  color: g.$main-color;
+  background-color: g.$white;
+  line-height: 1.2;
+
+  @include g.mq('sp'){
+    font-size: g.rem(32);
+    line-height: 1.1875;
+  }
+}
+
+.c-sub-mv__title-jp {
+  font-size: g.rem(20);
+  font-weight: 700;
+  color: g.$main-color;
+  background-color: g.$white;
+  line-height: 1.45;
+  
+  @include g.mq('sp'){
+    font-size: g.rem(16);
+    line-height: 1.5;
+  }
+}
+

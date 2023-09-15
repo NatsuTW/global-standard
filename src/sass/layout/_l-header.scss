@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "../global" as g;
+
+.l-header {
+  width: 100%;
+  height: g.rem(100);
+  position: sticky;
+  top: 0;
+  z-index: map.get(g.$layer, header);
+
+  @include g.mq('sp'){
+    height: g.rem(60);
+  }
+}
+
+.l-header__inner {
+  padding: 0 16px;
+
+  @include g.mq('tab-down'){
+    padding: 0 20px;
+  }
+}

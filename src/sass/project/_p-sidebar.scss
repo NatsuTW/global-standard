@@ -1,0 +1,17 @@
+@use "../global" as g;
+
+// サイトバー
+.p-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: g.rem(80);
+
+  @include g.mq('sp'){
+    gap: g.rem(56);
+  }
+}
+
+.p-sidebar__section-title {
+  font-size: max(g.rem(20), 18px);
+  font-weight: 700;
+}

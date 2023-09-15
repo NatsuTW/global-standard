@@ -1,0 +1,75 @@
+@use "../global" as g;
+
+// フッターのリンク
+.p-footer-links {
+  display: flex;
+  width: 100%;
+
+  @include g.mq("sp") {
+    display: block;
+  }
+}
+
+.p-footer-links__item {
+  width: 50%;
+  text-align: center;
+  padding: g.rem(56) g.rem(16) g.rem(50) g.rem(16);
+  position: relative;
+
+  @include g.mq("sp") {
+    width: 100%;
+    padding: g.rem(45) g.rem(40) g.rem(26);
+  }
+}
+
+.p-footer-links__item--download {
+  @extend .p-footer-links__item;
+  background: url(../img/img-download.png) no-repeat center center / cover;
+}
+
+.p-footer-links__item--contact {
+  @extend .p-footer-links__item;
+  background: url(../img/img-contact.png) no-repeat center center / cover;
+}
+
+.p-footer-links__text {
+  color: g.$white;
+  position: relative;
+  z-index: 1;
+}
+
+.p-footer-links__en {
+  font-size: g.rem(60);
+  line-height: 1.2;
+
+  @include g.mq("sp") {
+    font-size: g.rem(40);
+  }
+}
+
+.p-footer-links__jp {
+  font-size: max(g.rem(16), 14px);
+  line-height: 1.5;
+
+  @include g.mq('sp'){
+    margin-top: g.rem(4);
+  }
+}
+
+.p-footer-links__btn-wrapper {
+  margin-top: g.rem(40);
+}
+
+.p-footer-links__btn {
+  width: g.rem(315);
+  padding: g.rem(32) g.rem(16);
+  font-size: g.rem(24);
+  line-height: 1.167;
+
+  @include g.mq("sp") {
+    width: g.rem(295);
+    padding: g.rem(26) g.rem(16);
+    font-size: g.rem(16);
+    line-height: 1.1875;
+  }
+}

@@ -1,0 +1,83 @@
+@use "../global" as g;
+
+.p-top-company {
+  margin-top: g.rem(150);
+  padding-top: g.rem(105);
+  padding-bottom: g.rem(243);
+  position: relative;
+
+  @include g.mq('sp'){
+    margin-top: g.rem(60);
+    padding-top: 0;
+    padding-bottom: g.rem(176);
+  }
+
+  &::before {
+    // slope background
+    content: "";
+    display: block;
+    width: 100%;
+    height: 60.5%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #EDF3F8;
+    transform: skewY(10deg);
+    transform-origin: bottom right;
+    z-index: -2;
+
+    @include g.mq('sp'){
+      height: 82%;
+    }
+  }
+}
+
+.p-top-company__bg {
+  width: 39.06%;
+  height: 84.21%;
+  background: url(../img/bg-company.png) center center / cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+
+  @include g.mq('sp'){
+    width: 78.66%;
+    height: 37.7%;
+    top: g.rem(463);
+  }
+
+}
+
+.p-top-company__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-top: g.rem(20);
+
+  @include g.mq('sp'){
+    display: block;
+    margin-top: g.rem(60);
+  }
+}
+
+.p-top-company__text {
+  width: 34.454%;
+  display: flex;
+  flex-direction: column;
+  gap: g.rem(24);
+
+  @include g.mq('sp'){
+    width: 100%;
+  }
+}
+
+.p-top-company__img {
+  width: 61.909%;
+
+  @include g.mq('sp'){
+    width: 100%;
+    margin-top: g.rem(70);
+  }
+}

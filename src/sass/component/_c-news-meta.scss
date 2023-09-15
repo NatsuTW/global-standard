@@ -1,0 +1,35 @@
+@use "../global" as g;
+
+// 下層ページニュースの記事メタ部分
+.c-news-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-news-meta__cat {
+  display: inline-block;
+  color: g.$accent-color-second;
+  border: 1px solid g.$accent-color-second;
+}
+
+.c-news-meta__label {
+  display: flex;
+  align-items: center;
+}
+
+.c-news-meta__new {
+  color: g.$accent-color-second;
+  font-size: max(g.rem(16), 14px);
+  margin-left: g.rem(12);
+
+  @include g.mq('sp'){
+    margin-left: g.rem(8);
+    font-size: max(g.rem(14), 12px);
+  }
+}
+
+.c-news-meta__date {
+  color: #888888;
+  font-size: max(g.rem(14), 12px);
+}

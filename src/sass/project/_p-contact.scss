@@ -1,0 +1,63 @@
+@use "../global" as g;
+
+// 下層ページのcontact
+.p-contact {
+  padding-top: g.rem(80);
+  padding-bottom: g.rem(160);
+
+  @include g.mq("sp") {
+    padding-top: g.rem(60);
+    padding-bottom: g.rem(100);
+  }
+}
+
+.p-contact__form {
+  margin-top: g.rem(76);
+
+  @include g.mq("sp") {
+    margin-top: g.rem(56);
+  }
+}
+
+.p-contact__form-body {
+  margin-top: g.rem(60);
+
+  @include g.mq("sp") {
+    margin-top: g.rem(40);
+  }
+}
+
+.p-contact__form-title {
+  font-size: g.rem(24);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.p-contact__form-require {
+  margin-left: g.rem(12);
+
+  @include g.mq("sp") {
+    font-size: max(g.rem(12), 12px);
+    line-height: 1.417;
+  }
+}
+
+.p-contact__form-btn {
+  width: 30.233%;
+}
+
+.p-contact__to-top-link {
+  margin-top: g.rem(12);
+
+  a {
+    color: g.$main-color;
+    text-decoration: underline;
+    margin-left: g.rem(5);
+    transition: all 0.3s;
+
+    @include g.hover {
+      opacity: 0.7;
+    }
+  }
+}

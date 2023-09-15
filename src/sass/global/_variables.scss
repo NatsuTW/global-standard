@@ -1,0 +1,44 @@
+@use "./functions" as g;
+
+// Color
+$main-color: #023E78;
+$main-color-light: #EDF3F8;
+$main-color-dark: #002a52;
+$accent-color: #FEF251;
+$accent-color-second: #D33365;
+$text-color: #1a1a1a;
+
+$white: #ffffff;
+$black: #1a1a1a;
+
+// font
+$font-base: 'Noto Sans JP', sans-serif;
+$font-en: 'Fira Sans', sans-serif;
+$fs-base: 14;
+$fw-base: 500;
+$lh-base: 1.714;
+
+// layout
+$inner-width: 1100;
+$sp-width: 768;
+$xs-width: 375;
+
+// Breakpoint
+$breakpoints: (
+  "xs" : "screen and (max-width: #{g.px($xs-width - 1)})",
+  "sp": "screen and (max-width: #{g.px($sp-width - 1)})",
+  "tab-up": "screen and (min-width: #{g.px($sp-width)})",
+  "tab-down": "screen and (max-width: #{g.px($inner-width - 1)})",
+  "pc": "screen and (min-width: #{g.px($inner-width)})"
+);
+
+// layer
+$layer: (
+  loading: 300,
+  modal: 100,
+  drawer: 40,
+  topbtn: 30,
+  header: 20,
+  default: 1,
+);
+

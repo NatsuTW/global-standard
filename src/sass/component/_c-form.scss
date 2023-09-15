@@ -1,0 +1,229 @@
+@use "../global" as g;
+
+// フォーム
+.c-form__items {
+  display: flex;
+  flex-direction: column;
+  gap: g.rem(32);
+
+  @include g.mq("sp") {
+    gap: g.rem(20);
+  }
+}
+
+.c-form__label p {
+  display: flex;
+  align-items: center;
+  font-size: max(g.rem(18), 16px);
+  font-weight: 700;
+  line-height: 1.5;
+
+  @include g.mq("sp") {
+    font-size: max(g.rem(14), 14px);
+    line-height: 1.429;
+  }
+}
+
+.c-form__input {
+  font-size: max(g.rem(16), 14px);
+  margin-top: g.rem(12);
+
+  @include g.mq("sp") {
+    font-size: max(g.rem(14), 14px);
+    margin-top: g.rem(8);
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    height: 44px;
+    background-color: g.$white;
+    padding: 0 g.rem(16);
+    line-height: 44px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+
+    @include g.mq("sp") {
+      padding: 0 g.rem(14);
+    }
+  }
+
+  .c-form__select-wrapper {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 10.81px;
+      height: 6.81px;
+      background: url(../img/select-arrow.svg) no-repeat center center / cover;
+      position: absolute;
+      top: 18.6px;
+      right: 16.19px;
+    }
+  }
+
+  select {
+    cursor: pointer;
+    color: #cccccc;
+    line-height: 44px;
+
+    &.valid-selected {
+      color: g.$black;
+    }
+
+    option {
+      color: g.$black;
+
+      &.option-invalid {
+        color: #cccccc;
+      }
+    }
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    height: g.rem(240);
+    padding: g.rem(7) g.rem(16);
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    resize: vertical;
+
+    @include g.mq("sp") {
+      height: g.rem(140);
+    }
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-family: g.$font-base;
+    font-size: max(g.rem(16), 14px);
+    color: #cccccc;
+
+    @include g.mq("sp") {
+      font-size: max(g.rem(14), 14px);
+    }
+  }
+}
+
+.c-form__require {
+  color: g.$white;
+  background-color: g.$accent-color-second;
+  font-size: max(g.rem(12), 12px);
+  padding: 0 g.rem(8) g.rem(2);
+
+  @include g.mq("sp") {
+    font-size: max(g.rem(10), 10px);
+    line-height: 1.5;
+    padding: 0 g.rem(8) g.rem(2);
+  }
+}
+
+.c-form__check p {
+  margin-top: g.rem(40);
+  display: flex;
+  gap: g.rem(10);
+  align-items: center;
+  justify-content: center;
+}
+
+.c-form__check .wpcf7-list-item {
+  margin-left: 0;
+}
+
+.c-form__check-label {
+  font-size: max(g.rem(16), 14px);
+
+  @include g.mq("sp") {
+    font-size: max(g.rem(14), 14px);
+  }
+}
+
+.c-form__check-input {
+  width: g.rem(32);
+  height: g.rem(32);
+  background-color: g.$white;
+  border: 1px solid g.$black;
+  vertical-align: middle;
+  position: relative;
+
+  @include g.mq("sp") {
+    width: g.rem(28);
+    height: g.rem(28);
+  }
+
+  &::after {
+    content: "";
+    width: g.rem(10);
+    height: g.rem(20);
+    border: 2px solid g.$black;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: g.rem(2);
+    left: g.rem(10);
+    display: none;
+
+    @include g.mq("sp") {
+      width: g.rem(8);
+      height: g.rem(16);
+      top: g.rem(3);
+      left: g.rem(9);
+    }
+  }
+
+  &:checked {
+    &::after {
+      display: block;
+    }
+  }
+}
+
+.c-form__check-link {
+  font-weight: 700;
+  margin-right: g.rem(10);
+  text-decoration: underline;
+  transition: all 0.3s;
+
+  @include g.hover {
+    opacity: 0.8;
+  }
+
+  @include g.mq("sp") {
+    margin-right: g.rem(6);
+  }
+}
+
+.c-form__btn-wrapper {
+  margin-top: g.rem(40);
+  text-align: center;
+
+  .wpcf7-spinner {
+    display: none;
+  }
+}
+
+.c-form__btn {
+  font-size: max(g.rem(16), 14px);
+  text-align: center;
+  line-height: 1.5;
+  padding: g.rem(23) g.rem(23);
+  cursor: pointer;
+
+  &:hover:disabled {
+    color: g.$main-color;
+    background: g.$white;
+    border: 1px solid g.$main-color;
+  }
+
+  @include g.mq("sp") {
+    width: g.rem(295);
+    font-size: max(g.rem(14), 14px);
+    line-height: 1.714;
+    padding: g.rem(23) g.rem(24);
+  }
+}

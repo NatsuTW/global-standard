@@ -1,0 +1,38 @@
+@use "../global" as g;
+
+// 2カラムレイアウト
+.l-two-column {
+  padding-top: g.rem(80);
+  padding-bottom: g.rem(160);
+
+  @include g.mq('sp'){
+    padding-top: g.rem(60);
+    padding-bottom: g.rem(100);
+  }
+}
+
+.l-two-column__inner {
+  display: flex;
+  justify-content: space-between;
+
+  @include g.mq('sp'){
+    flex-direction: column;
+    gap: g.rem(100);
+  }
+}
+
+.l-two-column__main {
+  width: 69.091%;
+
+  @include g.mq('sp'){
+    width: 100%;
+  }
+}
+
+.l-two-column__side {
+  width: 27.273%;
+
+  @include g.mq('sp'){
+    width: 100%;
+  }
+}
